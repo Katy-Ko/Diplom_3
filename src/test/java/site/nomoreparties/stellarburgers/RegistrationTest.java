@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import static model.MainPage.PAGE_URL;
 
-public class RegistrationTest {
+public class RegistrationTests {
     private WebDriver driver;
     private static UserClient userClient;
     private static UserCredentials userCredentials;

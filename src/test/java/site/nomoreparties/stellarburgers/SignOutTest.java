@@ -13,7 +13,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import static model.MainPage.PAGE_URL;
 
-public class SignOutTest {
+public class SignOutTests {
 
     private WebDriver driver;
     private static UserClient userClient;

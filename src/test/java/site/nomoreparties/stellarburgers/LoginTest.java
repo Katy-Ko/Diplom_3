@@ -10,9 +10,10 @@ import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+
 import static model.MainPage.PAGE_URL;
 
-public class LoginTest {
+public class LoginTests {
 
     private WebDriver driver;
     private static UserClient userClient;
