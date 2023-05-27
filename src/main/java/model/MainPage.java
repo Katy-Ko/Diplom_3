@@ -90,7 +90,7 @@ public class MainPage {
 
     public boolean isBunsHeaderDisplayed(){
         WebElement bunsHeader =
-                new WebDriverWait(driver, 5)
+                new WebDriverWait(driver, 8)
                         .until(ExpectedConditions.visibilityOfElementLocated(BUNS_HEADER));
         return bunsHeader.isDisplayed();
     }
@@ -107,11 +107,6 @@ public class MainPage {
                 new WebDriverWait(driver, 5)
                         .until(ExpectedConditions.visibilityOfElementLocated(SAUCES_HEADER));
         return fillingsHeader.isDisplayed();
-    }
-
-    public void waitForLoadBunsTab() {
-        new WebDriverWait(driver, 8)
-                .until(ExpectedConditions.visibilityOfElementLocated(BUNS_TAB));
     }
 
 }

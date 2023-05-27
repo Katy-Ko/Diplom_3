@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import static model.MainPage.PAGE_URL;
 
-public class PersonalAccountTests {
+public class PersonalAccountTest {
 
     private WebDriver driver;
 
