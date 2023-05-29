@@ -3,6 +3,7 @@ package site.nomoreparties.stellarburgers;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import model.MainPage;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -13,6 +14,7 @@ import static model.MainPage.PAGE_URL;
 public class SwitchingTabsTest {
 
     private WebDriver driver;
+    private String expectedCurrentTab;
 
     @Before
     public void startUp() {
@@ -26,7 +28,8 @@ public class SwitchingTabsTest {
         MainPage objMainPage = new MainPage(driver);
         objMainPage.waitForPersonalAccountButton();
         objMainPage.clickSaucesTab();
-        objMainPage.isSaucesHeaderDisplayed();
+        expectedCurrentTab = "Соусы";
+        Assert.assertEquals(expectedCurrentTab, objMainPage.getCurrentTabName());
     }
 
     @Test
@@ -34,7 +37,8 @@ public class SwitchingTabsTest {
         MainPage objMainPage = new MainPage(driver);
         objMainPage.waitForPersonalAccountButton();
         objMainPage.clickFillingsTab();
-        objMainPage.isFillingsHeaderDisplayed();
+        expectedCurrentTab = "Начинки";
+        Assert.assertEquals(expectedCurrentTab, objMainPage.getCurrentTabName());
     }
 
     @Test
@@ -43,12 +47,13 @@ public class SwitchingTabsTest {
         objMainPage.waitForPersonalAccountButton();
         objMainPage.clickFillingsTab();
         objMainPage.clickBunsTab();
-        objMainPage.isBunsHeaderDisplayed();
+        expectedCurrentTab = "Булки";
+        Assert.assertEquals(expectedCurrentTab, objMainPage.getCurrentTabName());
     }
 
 
-    @After
+  /*  @After
     public void tearDown() {
         driver.quit();
-    }
+    }*/
 }

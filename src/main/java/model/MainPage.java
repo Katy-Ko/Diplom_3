@@ -24,16 +24,13 @@ public class MainPage {
     private static final By APP_LOGO = By.xpath(".//div[@class='AppHeader_header__logo__2D0X2']");
     //Вкладка "Булки"
     private static final By BUNS_TAB = By.xpath(".//span[text()='Булки']");
-    //Заголовок "Булки"
-    private static final By BUNS_HEADER = By.xpath(".//h2[1][text()='Булки']");
     //Вкладка "Соусы"
     private static final By SAUCES_TAB = By.xpath(".//span[text()='Соусы']");
-    //Заголовок "Соусы"
-    private static final By SAUCES_HEADER = By.xpath(".//h2[2][text()='Соусы']");
     //Вкладка "Начинки"
     private static final By FILLINGS_TAB = By.xpath(".//span[text()='Начинки']");
-    //Заголовок "Начинки"
-    private static final By FILLINGS_HEADER = By.xpath(".//h2[3][text()='Начинки']");
+    //Активная вкладка
+    private static final By CURRENT_TAB = By.className("tab_tab_type_current__2BEPc");
+
 
 
     private WebDriver driver;
@@ -88,25 +85,9 @@ public class MainPage {
         driver.findElement(FILLINGS_TAB).click();
     }
 
-    public boolean isBunsHeaderDisplayed(){
-        WebElement bunsHeader =
-                new WebDriverWait(driver, 8)
-                        .until(ExpectedConditions.visibilityOfElementLocated(BUNS_HEADER));
-        return bunsHeader.isDisplayed();
-    }
-
-    public boolean isSaucesHeaderDisplayed(){
-        WebElement saucesHeader =
-                new WebDriverWait(driver, 5)
-                        .until(ExpectedConditions.visibilityOfElementLocated(SAUCES_HEADER));
-        return saucesHeader.isDisplayed();
-    }
-
-    public boolean isFillingsHeaderDisplayed(){
-        WebElement fillingsHeader =
-                new WebDriverWait(driver, 5)
-                        .until(ExpectedConditions.visibilityOfElementLocated(SAUCES_HEADER));
-        return fillingsHeader.isDisplayed();
+    public String getCurrentTabName(){
+        new WebDriverWait(driver, 5);
+        return driver.findElement(CURRENT_TAB).getText();
     }
 
 }
