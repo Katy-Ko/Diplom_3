@@ -52,8 +52,8 @@ public class SwitchingTabsTest {
     }
 
 
-  /*  @After
+    @After
     public void tearDown() {
         driver.quit();
-    }*/
+    }
 }
